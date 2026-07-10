@@ -1,24 +1,25 @@
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inter",
 });
 
 const SITE_URL = "https://marcosuxdesign.com";
-const SITE_NAME = "Marcos N | UX Design";
-const SITE_DESCRIPTION = "Soluções em UX, UI Design e front-end";
+const SITE_NAME = "Marcos Nathanael | Front-End Developer e UX/UI Designer";
+const SITE_DESCRIPTION =
+  "Portfolio institucional de Marcos Nathanael, profissional de Front-End Development e UX/UI Design especializado em interfaces modernas, responsivas e centradas no usuario.";
 const OG_IMAGE_URL = `${SITE_URL}/Og-image.png`;
 const GOOGLE_SITE_VERIFICATION = "jEmcwTsI0W6gFAvivVaYNuh6QUaJ-8Fs_qeyZqGdkew";
 const GTM_ID = "GTM-N5KQ8NXG";
 
 export const metadata: Metadata = {
-   metadataBase: new URL(SITE_URL),
-  authors: [{ name: "Marcos N" }],
+  metadataBase: new URL(SITE_URL),
+  authors: [{ name: "Marcos Nathanael" }],
   title: {
     default: SITE_NAME,
     template: "%s | Marcos N",
@@ -67,8 +68,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full bg-zinc-950">{children}</body>
       <GoogleTagManager gtmId={GTM_ID} />
     </html>
   );
