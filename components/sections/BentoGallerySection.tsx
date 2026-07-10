@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import image1 from "@/app/assets/codezone-wid.png";
-import image2 from "@/app/assets/perdigao.webp";
+import image1 from "@/app/assets/subway-ipad.png";
+import image2 from "@/app/assets/imac-perdigao.png";
 import image5 from "@/app/assets/nestle.png";
 import image6 from "@/app/assets/eldorado.png";
 import image7 from "@/app/assets/subway.png";
-import image8 from "@/app/assets/cec.png";
-import image9 from "@/app/assets/sub-da-quebrada.png";
+import image8 from "@/app/assets/iPad-Pro-nestle.png";
+import image9 from "@/app/assets/macbook-codezone.png";
 import image10 from "@/app/assets/sky-25-anos.png";
 
 const galleryItems = [
