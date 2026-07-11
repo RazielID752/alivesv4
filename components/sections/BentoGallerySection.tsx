@@ -3,12 +3,12 @@
 import { useEffect, useRef } from "react";
 import image1 from "@/app/assets/subway-ipad.png";
 import image2 from "@/app/assets/imac-perdigao.png";
-import image5 from "@/app/assets/nestle.png";
-import image6 from "@/app/assets/eldorado.png";
-import image7 from "@/app/assets/subway.png";
+import image5 from "@/app/assets/tigre.png";
+import image6 from "@/app/assets/eldorado-brasil.png";
+import image7 from "@/app/assets/linkedin-studio.png";
 import image8 from "@/app/assets/iPad-Pro-nestle.png";
 import image9 from "@/app/assets/macbook-codezone.png";
-import image10 from "@/app/assets/sky-25-anos.png";
+import image10 from "@/app/assets/novanoite.png";
 
 const galleryItems = [
   {
