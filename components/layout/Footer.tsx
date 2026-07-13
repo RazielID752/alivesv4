@@ -16,19 +16,25 @@ export function Footer() {
           </a>
           <a
             className="transition hover:text-zinc-950"
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/marcos-nathanael/"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             LinkedIn
           </a>
           <a
             className="transition hover:text-zinc-950"
-            href="https://github.com"
+            href="https://github.com/RazielID752"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             GitHub
           </a>
           <a
             className="transition hover:text-zinc-950"
             href="mailto:hello@marcosn.dev"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             E-mail
           </a>

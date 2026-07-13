@@ -1,14 +1,14 @@
 export const stats = [
   {
-    value: "6+",
+    value: "8+",
     label: "anos de experiencia",
   },
   {
-    value: "40+",
+    value: "50+",
     label: "projetos concluidos",
   },
   {
-    value: "20+",
+    value: "50+",
     label: "clientes atendidos",
   },
 ];

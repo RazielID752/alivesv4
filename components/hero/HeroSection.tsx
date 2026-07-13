@@ -1,34 +1,12 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import dynamic from "next/dynamic";
+import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { FractalGlassHero } from "@/components/hero/FractalGlassHero";
 import { HeroContent } from "@/components/hero/HeroContent";
-
-const HeroCanvas = dynamic(
-  () => import("@/components/hero/HeroCanvas").then((mod) => mod.HeroCanvas),
-  {
-    loading: () => (
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(56,189,248,0.22),transparent_28%),radial-gradient(circle_at_34%_72%,rgba(236,72,153,0.16),transparent_30%),#020203]" />
-    ),
-    ssr: false,
-  },
-);
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
-  const smoothCursorX = useSpring(cursorX, { stiffness: 90, damping: 24 });
-  const smoothCursorY = useSpring(cursorY, { stiffness: 90, damping: 24 });
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -41,22 +19,23 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative isolate min-h-screen overflow-hidden bg-black text-white"
+      className="relative isolate min-h-screen overflow-hidden bg-[#010318] text-white"
       id="inicio"
-      onPointerMove={(event) => {
-        cursorX.set(event.clientX - 24);
-        cursorY.set(event.clientY - 24);
-      }}
       ref={sectionRef}
     >
-      <div className="absolute inset-0 -z-30 bg-[#020203]" />
-      {shouldReduceMotion ? (
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_72%_30%,rgba(56,189,248,0.25),transparent_30%),radial-gradient(circle_at_38%_72%,rgba(236,72,153,0.18),transparent_28%),radial-gradient(circle_at_72%_78%,rgba(250,204,21,0.12),transparent_24%)]" />
-      ) : (
-        <div className="absolute inset-0 -z-20">
-          <HeroCanvas scrollProgress={scrollYProgress} />
-        </div>
-      )}
+      <FractalGlassHero />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(1,3,24,0.08),rgba(1,3,24,0.28)_46%,rgba(1,3,24,0.82))]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(1,3,24,0.76)_0%,rgba(1,3,24,0.34)_42%,rgba(1,3,24,0.08)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 -z-10 h-36 bg-gradient-to-b from-black/30 to-transparent"
+      />
 
       <HeroContent
         ctaOpacity={ctaOpacity}
@@ -64,12 +43,6 @@ export function HeroSection() {
         introOpacity={introOpacity}
         titleOpacity={titleOpacity}
         titleY={titleY}
-      />
-
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-40 hidden h-12 w-12 rounded-full border border-white/18 bg-white/8 shadow-[0_0_60px_rgba(56,189,248,0.2)] backdrop-blur-xl lg:block"
-        style={{ x: smoothCursorX, y: smoothCursorY }}
       />
     </section>
   );

@@ -16,7 +16,7 @@ export function ContactSection() {
         <div className="grid gap-2 lg:grid-cols-[0.75fr_1fr] lg:items-center">
           <AnimatedWrapper>
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-blue-600">
-              Capitulo 06 / Convite
+              06 / Convite
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1] tracking-[-0.045em] sm:text-5xl lg:text-6xl">
               A proxima cena pode ser o seu projeto.

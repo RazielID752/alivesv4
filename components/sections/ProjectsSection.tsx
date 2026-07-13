@@ -36,7 +36,7 @@ export function ProjectsSection() {
       />
       <Container>
         <SectionTitle
-          overline="Capitulo 03 / Cases"
+          overline="04 - Cases"
           title="Agora entram as provas"
           description="Projetos que mostram essa logica em acao: narrativa, interface, interacao e codigo trabalhando juntos."
         />

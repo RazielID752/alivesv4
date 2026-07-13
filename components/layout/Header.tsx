@@ -7,12 +7,11 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { label: "Abertura", href: "#inicio" },
-  { label: "Origem", href: "#sobre" },
+  { label: "Inicio", href: "#inicio" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Galeria", href: "#galeria" },
   { label: "Cases", href: "#projetos" },
-  { label: "Ferramentas", href: "#servicos" },
-  { label: "Metodo", href: "#processo" },
-  { label: "Convite", href: "#contato" },
+  { label: "Contato", href: "#contato" },
 ];
 
 export function Header() {
@@ -30,7 +29,7 @@ export function Header() {
         </a>
 
         <nav
-          className="hidden items-center gap-8 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-zinc-400 lg:flex"
+          className="hidden items-center gap-8 text-[0.9rem] font-medium text-white lg:flex"
           aria-label="Navegacao principal"
         >
           {navigation.map((item) => (
@@ -45,8 +44,28 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#contato" variant="secondary">
-            Comecar projeto
+          <Button
+            className="gap-2 pl-1.5 pr-5"
+            href="#contato"
+            variant="secondary"
+          >
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-black transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4 12 12 4M6 4h6v6"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                />
+              </svg>
+            </span>
+            Começar projeto
           </Button>
         </div>
 
@@ -81,7 +100,7 @@ export function Header() {
             </a>
           ))}
           <Button className="mt-2" href="#contato" variant="primary">
-            Comecar projeto
+            Começar projeto
           </Button>
         </nav>
       </div>

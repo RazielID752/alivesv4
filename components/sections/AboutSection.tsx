@@ -2,14 +2,13 @@
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
+import { ScrollStatsSection } from "@/components/sections/ScrollStatsSection";
 import {
   AnimatedItem,
   AnimatedList,
   AnimatedWrapper,
 } from "@/components/ui/AnimatedWrapper";
 import { Container } from "@/components/ui/Container";
-import { StatCard } from "@/components/ui/StatCard";
-import { stats } from "@/data/stats";
 import { cn } from "@/lib/utils";
 
 const storyText =
@@ -71,7 +70,7 @@ export function AboutSection() {
           <Container>
             <div className="mx-auto max-w-5xl">
               <p className="text-xs font-bold uppercase tracking-[0.26em] text-blue-600">
-                Sobre mim
+                02 - Sobre mim
               </p>
               <h2 className="mt-6 text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.04em] sm:text-5xl lg:text-7xl">
                 {words.map((word, index) => (
@@ -124,15 +123,9 @@ export function AboutSection() {
             </AnimatedItem>
           ))}
         </AnimatedList>
-
-        <AnimatedList className="mt-4 grid gap-4 md:grid-cols-3">
-          {stats.map((stat) => (
-            <AnimatedItem key={stat.label}>
-              <StatCard value={stat.value} label={stat.label} />
-            </AnimatedItem>
-          ))}
-        </AnimatedList>
       </Container>
+
+      <ScrollStatsSection />
     </section>
   );
 }
