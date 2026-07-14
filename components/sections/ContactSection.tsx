@@ -1,3 +1,6 @@
+import {
+  ArrowRight,
+} from "lucide-react";
 import { AnimatedWrapper } from "@/components/ui/AnimatedWrapper";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -35,37 +38,11 @@ export function ContactSection() {
                   Vamos criar uma historia que o usuario queira continuar.
                 </h3>
                 <div className="mt-6 flex items-center gap-4">
-                  <Button href="mailto:hello@marcosn.dev" variant="primary">
+                  <Button href="mailto:hello@marcosn.dev" icon={ArrowRight}>
                     Entrar em contato
                   </Button>
                 </div>
               </div>
-            </div>
-            <div className="mt-10 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-[0.18em] text-zinc-600">
-              <a
-                className="transition hover:text-zinc-950"
-                href="https://linkedin.com"
-              >
-                LinkedIn
-              </a>
-              <a
-                className="transition hover:text-zinc-950"
-                href="https://github.com"
-              >
-                GitHub
-              </a>
-              <a
-                className="transition hover:text-zinc-950"
-                href="mailto:hello@marcosn.dev"
-              >
-                E-mail
-              </a>
-              <a
-                className="transition hover:text-zinc-950"
-                href="https://wa.me/5500000000000"
-              >
-                WhatsApp
-              </a>
             </div>
           </AnimatedWrapper>
         </div>

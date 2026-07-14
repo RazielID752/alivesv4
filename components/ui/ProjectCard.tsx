@@ -1,3 +1,4 @@
+import { Code2, ExternalLink } from "lucide-react";
 import type { Project } from "@/types/project";
 import { Button } from "./Button";
 
@@ -50,18 +51,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           ))}
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button
-            className="min-h-10 px-4"
-            href={project.projectUrl}
-            variant="dark"
-          >
+          <Button href={project.projectUrl} icon={ExternalLink}>
             Projeto
           </Button>
           {project.repositoryUrl ? (
             <Button
-              className="min-h-10 px-4"
               href={project.repositoryUrl}
-              variant="light"
+              icon={Code2}
+              variant="secondary"
             >
               Repositorio
             </Button>

@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils";
 const sections = [
   { id: "inicio", label: "Início", number: "01" },
   { id: "sobre", label: "Sobre", number: "02" },
-  { id: "galeria", label: "Galeria", number: "03" },
+  { id: "experiencia", label: "Experiência", number: "03" },
   { id: "projetos", label: "Projetos", number: "04" },
-  { id: "contato", label: "Contato", number: "05" },
+  { id: "comeco", label: "O começo", number: "05" },
+  { id: "contato", label: "Contato", number: "06" },
 ];
 
 export function PageIndicator() {

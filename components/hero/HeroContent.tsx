@@ -3,6 +3,7 @@
 import { type MotionValue, motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { Button } from "@/components/ui/Button";
 
 type HeroContentProps = Readonly<{
   ctaOpacity: MotionValue<number>;
@@ -141,28 +142,7 @@ export function HeroContent({
           className="sm:col-span-4 sm:order-3 flex flex-col gap-4 sm:flex-row sm:items-center"
           style={{ opacity: ctaOpacity, y: ctaY }}
         >
-          <a
-            className="group inline-flex min-h-14 w-fit items-center gap-3 rounded-full bg-white px-4 pr-6 text-sm font-semibold text-zinc-950 shadow-[0_24px_90px_rgba(0,0,0,0.24)] transition duration-300 hover:scale-[1.035] hover:shadow-[0_30px_110px_rgba(255,255,255,0.16)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#010318]"
-            href="#projetos"
-          >
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-zinc-950 text-white transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-              <svg
-                aria-hidden="true"
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M4 12 12 4M6 4h6v6"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.8"
-                />
-              </svg>
-            </span>
-            Explorar projetos
-          </a>
+          <Button href="#projetos">Explorar projetos</Button>
         </motion.div>
       </motion.div>
     </div>

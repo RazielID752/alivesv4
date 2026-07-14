@@ -1,41 +1,50 @@
+import { ArrowUpRight, type LucideIcon } from "lucide-react";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-
-type ButtonVariant = "primary" | "secondary" | "dark" | "light" | "ghost";
 
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   Readonly<{
     children: ReactNode;
-    variant?: ButtonVariant;
+    icon?: LucideIcon;
+    variant?: "primary" | "secondary";
   }>;
 
-const variants: Record<ButtonVariant, string> = {
+const variants = {
   primary:
-    "bg-white text-zinc-950 shadow-[0_18px_60px_rgba(59,130,246,0.28)] hover:bg-blue-50",
+    "bg-white text-zinc-950 shadow-[0_24px_90px_rgba(0,0,0,0.24)] hover:shadow-[0_30px_110px_rgba(255,255,255,0.16)] focus:ring-white focus:ring-offset-[#010318]",
   secondary:
-    "border border-white/15 bg-white/5 text-white hover:border-white/35 hover:bg-white/10",
-  dark: "bg-zinc-950 text-white hover:bg-zinc-800",
-  light:
-    "border border-zinc-950/15 bg-white text-zinc-950 hover:border-zinc-950/40 hover:bg-zinc-50",
-  ghost:
-    "border border-white/20 bg-transparent text-white hover:border-white/40 hover:bg-white/8",
-};
+    "border border-zinc-950/15 bg-transparent text-zinc-950 shadow-none hover:border-zinc-950/35 hover:bg-zinc-950/[0.04] focus:ring-zinc-950 focus:ring-offset-white",
+} as const;
+
+const iconVariants = {
+  primary: "bg-zinc-950 text-white",
+  secondary: "border border-zinc-950/20 bg-transparent text-zinc-950",
+} as const;
 
 export function Button({
   children,
   className,
+  icon: Icon = ArrowUpRight,
   variant = "primary",
   ...props
 }: ButtonProps) {
   return (
     <a
       className={cn(
-        "inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent",
+        "group inline-flex min-h-14 w-fit items-center gap-3 rounded-full px-4 pr-6 text-sm font-semibold transition duration-300 hover:scale-[1.035] focus:outline-none focus:ring-2 focus:ring-offset-2",
         variants[variant],
         className,
       )}
       {...props}
     >
+      <span
+        className={cn(
+          "grid h-9 w-9 shrink-0 place-items-center rounded-full transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1",
+          iconVariants[variant],
+        )}
+      >
+        <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+      </span>
       {children}
     </a>
   );

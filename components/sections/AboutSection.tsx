@@ -2,7 +2,6 @@
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
-import { ScrollStatsSection } from "@/components/sections/ScrollStatsSection";
 import {
   AnimatedItem,
   AnimatedList,
@@ -96,7 +95,7 @@ export function AboutSection() {
         </div>
       </div>
 
-      <Container className="pb-50 pt-50 lg:pb-32">
+      {/* <Container className="pb-50 pt-50 lg:pb-32">
         <AnimatedWrapper className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.26em] text-blue-600">
             Como a historia ganha forma
@@ -123,9 +122,7 @@ export function AboutSection() {
             </AnimatedItem>
           ))}
         </AnimatedList>
-      </Container>
-
-      <ScrollStatsSection />
+      </Container> */}
     </section>
   );
 }

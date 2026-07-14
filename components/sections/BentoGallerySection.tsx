@@ -130,7 +130,7 @@ export function BentoGallerySection() {
 
   return (
     <section
-      id="galeria"
+      id="experiencia"
       className="relative overflow-hidden bg-zinc-950 text-white"
     >
       {/* <Container className="py-20 lg:py-28">
@@ -161,61 +161,73 @@ export function BentoGallerySection() {
       <div className="bg-zinc-950 pb-24">
         <div className="mx-auto max-w-3xl px-6 py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
-            03 / Galeria
+            03 / Experiência
           </p>
           <h3 className="mt-4 text-3xl font-semibold tracking-[-0.02em] text-white sm:text-4xl">
-            Galeria de projetos
+            Tecnologia, design e experiências que geram impacto
           </h3>
-          <div className="mt-6 space-y-4 text-zinc-300 leading-relaxed">
+          <div className="mt-6 space-y-4 leading-relaxed text-zinc-300">
             <p>
-              Desenvolvedor Front-End com experiência na construção de
-              aplicações web escaláveis utilizando tecnologias modernas como
-              React, Next.js, Angular e TypeScript.
+              Sou Desenvolvedor Front-End com experiência na criação de
+              aplicações web modernas, escaláveis e de alta performance,
+              utilizando tecnologias como React, Next.js, Angular e TypeScript.
             </p>
+
             <p>
-              Tenho uma sólida base em UX/UI Design, o que me permite combinar
-              implementação técnica com princípios de design centrado no usuário
-              para criar interfaces intuitivas e de alta performance.
+              Minha experiência em UX/UI Design me permite unir desenvolvimento
+              e design centrado no usuário. Dessa forma, transformo necessidades
+              de negócio em interfaces intuitivas, acessíveis e visualmente
+              consistentes.
             </p>
+
             <p>
-              Já criei projetos que impactaram positivamente a vida de usuários
-              e empresas, como por exemplo: Perdigão®, Codezone®, Nestlé®,
-              Subway®, Tigre®, Novanoite®, LinkedIn®, Eldorado Brasil®.
+              Ao longo da minha trajetória, participei de projetos para marcas
+              como Perdigão®, Nestlé®, Subway®, Tigre®, LinkedIn®, Eldorado
+              Brasil®, Codezone® e Novanoite®, contribuindo para a criação de
+              produtos e experiências digitais voltados a diferentes públicos e
+              objetivos.
             </p>
+
             <p>
-              Atualmente trabalho com Angular, React e Next.js para desenvolver
-              aplicações modernas focadas em performance, escalabilidade e
-              manutenibilidade.
+              Também possuo experiência com pesquisa de UX, testes de
+              usabilidade, prototipação, criação de interfaces e desenvolvimento
+              de design systems, acompanhando o produto desde a concepção até a
+              implementação.
             </p>
+
             <p>
               Anteriormente, atuei como Instrutor de Front-End no SENAI/FIRJAN,
-              ensinando conceitos de desenvolvimento web, incluindo HTML, CSS,
-              JavaScript e lógica de programação para novos desenvolvedores.
+              compartilhando conhecimentos sobre HTML, CSS, JavaScript, lógica
+              de programação e desenvolvimento web com novos profissionais da
+              área.
             </p>
+
             <p>
-              Minha experiência também inclui pesquisa de UX, testes de
-              usabilidade, design systems e design de interfaces de produtos
-              para aplicações reais.
+              Atualmente, trabalho com Angular, React e Next.js no
+              desenvolvimento de soluções focadas em performance,
+              escalabilidade, qualidade de código e facilidade de manutenção.
             </p>
+
             <p>
-              Stack Tecnológica: React.js, Next.js, Angular, TypeScript /
-              JavaScript, HTML / CSS / Tailwind, APIs REST, NgRx / React Query /
-              RxJS.
+              Minha principal stack inclui React, Next.js, Angular, TypeScript,
+              JavaScript, HTML, CSS, Tailwind CSS, APIs REST, NgRx, React Query
+              e RxJS.
             </p>
+
             <p>
-              Estou sempre em busca de contribuir com produtos que impactem a
-              vida das pessoas e melhorem as experiências digitais.
+              Estou sempre em busca de novos desafios e oportunidades para
+              contribuir com produtos que facilitem a vida das pessoas e
+              proporcionem experiências digitais relevantes.
             </p>
+
             <p className="mt-6 text-[10px] font-semibold text-zinc-400">
-              Todos os direitos autorais e propriedade intelectual relacionados
-              ao projeto apresentado nesta página pertencem exclusivamente as
-              respectivas partes. Este trabalho é exibido com o único propósito
-              de demonstrar minhas habilidades e experiência profissional
-              aplicadas nesses cases de sucesso de design UX. O uso das imagens,
-              textos e demais elementos deste projeto não implica em qualquer
-              tipo de associação, endosso ou parceria.Todas as marcas
-              comerciais, logotipos e nomes de produtos pertencem aos seus
-              respectivos proprietários.
+              Os direitos autorais e a propriedade intelectual dos projetos
+              apresentados nesta página pertencem aos seus respectivos
+              titulares. Os trabalhos são exibidos exclusivamente para
+              demonstrar minha participação, experiência profissional e
+              habilidades aplicadas em cada projeto. A utilização de imagens,
+              textos, marcas e demais elementos não representa associação,
+              endosso ou parceria com seus proprietários.
             </p>
           </div>
 

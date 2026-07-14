@@ -69,9 +69,7 @@ export function HeroSection() {
           </div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button href="#sobre">Começar a história</Button>
-            <Button href="#sobre" variant="secondary">
-              Role para explorar
-            </Button>
+            <Button href="#sobre">Role para explorar</Button>
           </div>
         </motion.div>
 

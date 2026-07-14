@@ -1,11 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  AnimatedItem,
-  AnimatedList,
-  AnimatedWrapper,
-} from "@/components/ui/AnimatedWrapper";
+  Blocks,
+  FolderKanban,
+  Globe2,
+  Layers3,
+  LayoutDashboard,
+  type LucideIcon,
+  Palette,
+  PanelsTopLeft,
+} from "lucide-react";
+import { useState } from "react";
+import { AnimatedWrapper } from "@/components/ui/AnimatedWrapper";
 import { Container } from "@/components/ui/Container";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -15,15 +22,24 @@ import type { ProjectCategory } from "@/types/project";
 
 type ActiveCategory = "Todos" | ProjectCategory;
 
+const categoryIcons: Record<ActiveCategory, LucideIcon> = {
+  Todos: Layers3,
+  "Front-End": Blocks,
+  "UX/UI Design": Palette,
+  Dashboard: LayoutDashboard,
+  "Landing Page": PanelsTopLeft,
+  "Sistema Web": Globe2,
+  Portfolio: FolderKanban,
+};
+
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState<ActiveCategory>("Todos");
-  const visibleProjects = useMemo(() => {
-    if (activeCategory === "Todos") {
-      return projects;
-    }
-
-    return projects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  const visibleProjects = projects
+    .map((project, index) => ({ project, originalIndex: index }))
+    .filter(
+      ({ project }) =>
+        activeCategory === "Todos" || project.category === activeCategory,
+    );
 
   return (
     <section
@@ -42,30 +58,54 @@ export function ProjectsSection() {
         />
 
         <AnimatedWrapper className="mt-10 flex gap-2 overflow-x-auto pb-2">
-          {projectCategories.map((category) => (
-            <button
-              type="button"
-              className={cn(
-                "shrink-0 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] transition",
-                activeCategory === category
-                  ? "border-zinc-950 bg-zinc-950 text-white"
-                  : "border-zinc-950/10 bg-white text-zinc-500 hover:border-zinc-950/30 hover:text-zinc-950",
-              )}
-              key={category}
-              onClick={() => setActiveCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
+          {projectCategories.map((category) => {
+            const Icon = categoryIcons[category];
+
+            return (
+              <button
+                type="button"
+                className={cn(
+                  "flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] transition",
+                  activeCategory === category
+                    ? "border-zinc-950 bg-zinc-950 text-white"
+                    : "border-zinc-950/10 bg-white text-zinc-500 hover:border-zinc-950/30 hover:text-zinc-950",
+                )}
+                aria-pressed={activeCategory === category}
+                key={category}
+                onClick={() => setActiveCategory(category)}
+              >
+                <Icon aria-hidden="true" className="h-3.5 w-3.5" />
+                {category}
+              </button>
+            );
+          })}
         </AnimatedWrapper>
 
-        <AnimatedList className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {visibleProjects.map((project, index) => (
-            <AnimatedItem key={project.id}>
-              <ProjectCard index={index} project={project} />
-            </AnimatedItem>
-          ))}
-        </AnimatedList>
+        <p className="sr-only" aria-live="polite">
+          {visibleProjects.length}{" "}
+          {visibleProjects.length === 1 ? "case" : "cases"}
+          {activeCategory === "Todos" ? " exibidos" : ` em ${activeCategory}`}
+        </p>
+
+        <motion.div
+          className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          layout
+        >
+          <AnimatePresence initial={false} mode="popLayout">
+            {visibleProjects.map(({ project, originalIndex }) => (
+              <motion.div
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.97, y: -12 }}
+                initial={{ opacity: 0, scale: 0.97, y: 18 }}
+                key={project.id}
+                layout
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <ProjectCard index={originalIndex} project={project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </Container>
     </section>
   );
