@@ -1,6 +1,6 @@
-import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { CookieConsent } from "@/components/privacy/CookieConsent";
 import "./globals.css";
 
 const inter = Inter({
@@ -69,8 +69,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full bg-zinc-950">{children}</body>
-      <GoogleTagManager gtmId={GTM_ID} />
+      <body className="min-h-full bg-zinc-950">
+        {children}
+        <CookieConsent gtmId={GTM_ID} />
+      </body>
     </html>
   );
 }

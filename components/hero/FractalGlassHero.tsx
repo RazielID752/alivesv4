@@ -402,9 +402,10 @@ export function FractalGlassHero() {
       return;
     }
 
+    const isSmallViewport = window.matchMedia("(max-width: 767px)").matches;
     const renderer = new WebGLRenderer({
       alpha: false,
-      antialias: true,
+      antialias: !isSmallViewport,
       powerPreference: "high-performance",
     });
     renderer.setClearColor(0x010318, 1);
@@ -415,13 +416,18 @@ export function FractalGlassHero() {
     const noiseScene = new Scene();
     const geometry = new PlaneGeometry(2, 2, 1, 1);
     const resolution = new Vector2(1, 1);
-    const grainTextureSize = new Vector2(1920, 1260);
+    const grainTextureSize = new Vector2(1024, 691);
 
-    const noiseTarget = new WebGLRenderTarget(256, 256, {
-      format: RGBAFormat,
-      magFilter: LinearFilter,
-      minFilter: LinearFilter,
-    });
+    const noiseTargetSize = isSmallViewport ? 128 : 256;
+    const noiseTarget = new WebGLRenderTarget(
+      noiseTargetSize,
+      noiseTargetSize,
+      {
+        format: RGBAFormat,
+        magFilter: LinearFilter,
+        minFilter: LinearFilter,
+      },
+    );
     noiseTarget.texture.wrapS = MirroredRepeatWrapping;
     noiseTarget.texture.wrapT = MirroredRepeatWrapping;
 
@@ -449,7 +455,7 @@ export function FractalGlassHero() {
     noiseScene.add(noiseMesh);
 
     const grainTexture = new TextureLoader().load(
-      "/film_grain_contrasted.jpg",
+      "/film_grain_contrasted.webp",
       (texture) => {
         grainTextureSize.set(texture.image.width, texture.image.height);
         texture.wrapS = RepeatWrapping;
@@ -490,7 +496,8 @@ export function FractalGlassHero() {
 
     const resize = () => {
       const rect = mount.getBoundingClientRect();
-      const pixelRatio = Math.min(window.devicePixelRatio, 1.75);
+      const maxPixelRatio = isSmallViewport ? 1.25 : 1.75;
+      const pixelRatio = Math.min(window.devicePixelRatio, maxPixelRatio);
       const width = Math.max(rect.width, 1);
       const height = Math.max(rect.height, 1);
 

@@ -427,8 +427,8 @@ export function ExpertiseSection() {
               <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#28c940]" />
             </div>
-            <span className="font-mono text-[0.54rem] uppercase tracking-[0.16em] text-zinc-500">
-              experience.tsx
+            <span className="font-mono text-[0.54rem] tracking-[0.16em] text-zinc-500">
+              Experience.tsx
             </span>
           </div>
 
@@ -439,7 +439,7 @@ export function ExpertiseSection() {
             >
               <div className="mb-4 flex items-center justify-between border-white/8 border-b pb-3">
                 <span className="font-mono text-[0.56rem] text-zinc-500">
-                  EXPERIENCE.TSX
+                  Experience.tsx
                 </span>
                 <span className="font-mono text-[0.54rem] text-blue-300">
                   TSX
@@ -452,7 +452,7 @@ export function ExpertiseSection() {
                     data-expertise-code-row
                     key={`${index}-${line}`}
                   >
-                    <span className="mr-2 inline-block w-3 select-none text-right text-zinc-700">
+                    <span className="mr-2 inline-block w-3 select-none text-right text-zinc-400">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     {line || " "}
@@ -572,7 +572,7 @@ export function ExpertiseSection() {
 
         <div className="mt-12 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c0c10] p-5 shadow-2xl">
           <div className="mb-5 flex items-center justify-between border-white/8 border-b pb-4">
-            <span className="font-mono text-[0.6rem] text-zinc-500">
+            <span className="font-mono text-[0.6rem] text-zinc-400">
               EXPERIENCE.TSX
             </span>
             <span className="font-mono text-[0.6rem] text-emerald-300">
@@ -582,7 +582,7 @@ export function ExpertiseSection() {
           <code className="block overflow-x-auto font-mono text-[0.66rem] leading-6 text-zinc-300">
             {codeLines.slice(0, 10).map((line, index) => (
               <span className="block whitespace-pre" key={`${index}-${line}`}>
-                <span className="mr-3 inline-block w-3 select-none text-zinc-700">
+                <span className="mr-3 inline-block w-3 select-none text-zinc-400">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {line || " "}
@@ -613,12 +613,12 @@ export function ExpertiseSection() {
                 className="grid grid-cols-[2rem_1fr_auto] items-start gap-2 border-zinc-950/10 border-b py-4 last:border-b-0"
                 key={item.label}
               >
-                <span className="pt-0.5 font-mono text-[0.6rem] text-zinc-400">
+                <span className="pt-0.5 font-mono text-[0.6rem] text-zinc-600">
                   0{index + 1}
                 </span>
                 <div>
                   <h4 className="text-sm font-semibold">{item.label}</h4>
-                  <p className="mt-1 text-xs leading-5 text-zinc-500">
+                  <p className="mt-1 text-xs leading-5 text-zinc-600">
                     {item.description}
                   </p>
                 </div>

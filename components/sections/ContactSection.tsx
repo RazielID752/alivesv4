@@ -38,7 +38,7 @@ export function ContactSection() {
                   Vamos criar uma historia que o usuario queira continuar.
                 </h3>
                 <div className="mt-6 flex items-center gap-4">
-                  <Button href="mailto:hello@marcosn.dev" icon={ArrowRight}>
+                  <Button href="https://wa.me/5521974131359" icon={ArrowRight}>
                     Entrar em contato
                   </Button>
                 </div>

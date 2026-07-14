@@ -1,4 +1,6 @@
-import { AtSign, BriefcaseBusiness, Code2, Home } from "lucide-react";
+import { ScrollText, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { CookiePreferencesButton } from "@/components/privacy/CookiePreferencesButton";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -12,33 +14,43 @@ export function Footer() {
           className="flex flex-wrap gap-5 text-xs font-bold uppercase tracking-[0.18em]"
           aria-label="Links do rodape"
         >
-          <a
-            className="inline-flex items-center gap-1.5 transition hover:text-zinc-950"
+          <Link
+            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            href="/politica-de-privacidade"
+          >
+            Privacidade
+          </Link>
+          <Link
+            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            href="/termos"
+          >
+            Termos
+          </Link>
+          <CookiePreferencesButton />
+          <Link
+            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
             href="https://www.linkedin.com/in/marcos-nathanael/"
             rel="noreferrer noopener"
             target="_blank"
           >
-            <BriefcaseBusiness aria-hidden="true" className="h-3.5 w-3.5" />
             LinkedIn
-          </a>
-          <a
-            className="inline-flex items-center gap-1.5 transition hover:text-zinc-950"
+          </Link>
+          <Link
+            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
             href="https://github.com/RazielID752"
             rel="noreferrer noopener"
             target="_blank"
           >
-            <Code2 aria-hidden="true" className="h-3.5 w-3.5" />
             GitHub
-          </a>
-          <a
-            className="inline-flex items-center gap-1.5 transition hover:text-zinc-950"
-            href="mailto:hello@marcosn.dev"
+          </Link>
+          <Link
+            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            href="https://wa.me/5521974131359"
             rel="noreferrer noopener"
             target="_blank"
           >
-            <AtSign aria-hidden="true" className="h-3.5 w-3.5" />
-            E-mail
-          </a>
+            WhatsApp
+          </Link>
         </nav>
       </Container>
     </footer>

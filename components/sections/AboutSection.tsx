@@ -76,7 +76,7 @@ export function AboutSection() {
                   <span
                     className={cn(
                       "mr-[0.22em] inline-block transition-colors duration-300",
-                      index < filledWords ? "text-zinc-950" : "text-zinc-300",
+                      index < filledWords ? "text-zinc-950" : "text-zinc-500",
                     )}
                     key={word.id}
                   >

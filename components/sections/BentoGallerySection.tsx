@@ -1,5 +1,6 @@
 "use client";
 
+import Image, { type StaticImageData } from "next/image";
 import { useEffect, useRef } from "react";
 import image6 from "@/app/assets/eldorado-brasil.png";
 import image2 from "@/app/assets/imac-perdigao.png";
@@ -13,37 +14,37 @@ import image5 from "@/app/assets/tigre.png";
 const galleryItems = [
   {
     alt: "Subway® - Subway da quebrada.",
-    src: image1.src,
+    src: image1,
   },
   {
     alt: "Tigre® - Portal Tigre.",
-    src: image5.src,
+    src: image5,
   },
   {
     alt: "Perdigão® - Promoção chester.",
-    src: image2.src,
+    src: image2,
   },
   {
     alt: "CodeZone® - Website comercial.",
-    src: image9.src,
+    src: image9,
   },
   {
     alt: "Nestlé® - Nancare novo produto.",
-    src: image8.src,
+    src: image8,
   },
   {
     alt: "NovoNoite® - Campanha publicitária.",
-    src: image10.src,
+    src: image10,
   },
   {
     alt: "LinkedIn® - Studio astros.",
-    src: image7.src,
+    src: image7,
   },
   {
     alt: "Eldorado® - Brasil.",
-    src: image6.src,
+    src: image6,
   },
-];
+] satisfies Array<{ alt: string; src: StaticImageData }>;
 
 export function BentoGallerySection() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -133,17 +134,6 @@ export function BentoGallerySection() {
       id="experiencia"
       className="relative overflow-hidden bg-zinc-950 text-white"
     >
-      {/* <Container className="py-20 lg:py-28">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.26em] text-blue-300">
-            Capitulo 03 / Composicao
-          </p>
-          <h2 className="mt-4 text-balance text-4xl font-semibold leading-[0.95] tracking-[-0.03em] sm:text-5xl lg:text-7xl">
-            Um mosaico que muda de forma com o scroll.
-          </h2>
-        </div>
-      </Container> */}
-
       <div className="scrubbed-bento-wrap" ref={wrapRef}>
         <ul
           aria-label="Galeria animada de composicoes visuais"
@@ -151,9 +141,16 @@ export function BentoGallerySection() {
           ref={galleryRef}
         >
           {galleryItems.map((item) => (
-            <li className="scrubbed-bento__item" key={item.src}>
-              {/* biome-ignore lint/performance/noImgElement: This section intentionally mirrors the CodePen's external image gallery. */}
-              <img alt={item.alt} src={item.src} />
+            <li className="scrubbed-bento__item" key={item.src.src}>
+              <Image
+                alt={item.alt}
+                className="object-cover"
+                fill
+                loading="lazy"
+                placeholder="blur"
+                sizes="100vw"
+                src={item.src}
+              />
             </li>
           ))}
         </ul>
