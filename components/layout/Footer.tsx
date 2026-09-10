@@ -11,24 +11,24 @@ export function Footer() {
           © 2026 Marcos N. Todos os direitos reservados.
         </p>
         <nav
-          className="flex flex-wrap gap-5 text-xs font-bold uppercase tracking-[0.18em]"
+          className="flex flex-wrap gap-5 text-xs font-bold  tracking-[0.18em]"
           aria-label="Links do rodape"
         >
           <Link
-            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            className="inline-flex text-[12px] items-center gap-1.5 transition  hover:text-blue-600"
             href="/politica-de-privacidade"
           >
             Privacidade
           </Link>
           <Link
-            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            className="inline-flex text-[12px] items-center gap-1.5 transition  hover:text-blue-600"
             href="/termos"
           >
             Termos
           </Link>
           <CookiePreferencesButton />
           <Link
-            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            className="inline-flex text-[12px] items-center gap-1.5 transition  hover:text-blue-600"
             href="https://www.linkedin.com/in/marcos-nathanael/"
             rel="noreferrer noopener"
             target="_blank"
@@ -36,7 +36,7 @@ export function Footer() {
             LinkedIn
           </Link>
           <Link
-            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            className="inline-flex text-[12px] items-center gap-1.5 transition  hover:text-blue-600"
             href="https://github.com/RazielID752"
             rel="noreferrer noopener"
             target="_blank"
@@ -44,7 +44,7 @@ export function Footer() {
             GitHub
           </Link>
           <Link
-            className="inline-flex items-center gap-1.5 transition uppercase hover:text-blue-600"
+            className="inline-flex text-[12px] items-center gap-1.5 transition  hover:text-blue-600"
             href="https://wa.me/5521974131359"
             rel="noreferrer noopener"
             target="_blank"

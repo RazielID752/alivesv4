@@ -11,8 +11,7 @@ import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
 const storyText =
-  "Sou Marcos Nathanael. Eu uno UX, UI e front-end para transformar ideias complexas em experiencias digitais claras, fluidas e memoraveis. Meu trabalho e guiar o usuario: primeiro ele entende, depois confia, e entao sabe exatamente qual passo dar.";
-
+"Sou Marcos Nathanael, Front-End Developer com forte visão de UX/UI. Transformo ideias complexas em interfaces modernas, performáticas e intuitivas, unindo código e experiência para criar produtos digitais claros, fluidos e fáceis de usar.";
 const storyBlocks = [
   {
     label: "Contexto",

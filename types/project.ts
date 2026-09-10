@@ -13,5 +13,6 @@ export type Project = {
   description: string;
   technologies: string[];
   projectUrl: string;
+  caseSlug?: string;
   repositoryUrl?: string;
 };

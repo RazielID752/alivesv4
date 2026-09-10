@@ -13,13 +13,14 @@ export const projectCategories: Array<"Todos" | ProjectCategory> = [
 export const projects: Project[] = [
   {
     id: "aura-interiores",
-    title: "Aura Interiores",
+    title: "Promo Perdigão Chester®",
     category: "UX/UI Design",
     description:
-      "Experiencia editorial para uma marca de interiores com foco em desejo, clareza e conversao.",
-    technologies: ["UX/UI", "Next.js", "Tailwind"],
-    projectUrl: "#contato",
-    repositoryUrl: "#",
+      "Chester® Portal de Generosidade, um projeto que promove produtos. Comprando, você ajuda a doar Chester® para as famílias.",
+    technologies: ["UX", "UI", "Research", "Mobile", "Web"],
+    projectUrl: "/cases/promo-perdigao-chester",
+    caseSlug: "promo-perdigao-chester",
+    // repositoryUrl: "#",
   },
   {
     id: "nexa-analytics",
@@ -28,7 +29,8 @@ export const projects: Project[] = [
     description:
       "Dashboard escuro para leitura rapida de metricas, graficos e decisoes operacionais.",
     technologies: ["React", "TypeScript", "APIs"],
-    projectUrl: "#contato",
+    projectUrl: "/cases/nexa-analytics",
+    caseSlug: "nexa-analytics",
   },
   {
     id: "kali-skincare",

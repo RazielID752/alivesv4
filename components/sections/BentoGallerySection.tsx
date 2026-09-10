@@ -74,6 +74,7 @@ export function BentoGallerySection() {
       }
 
       gsap.registerPlugin(Flip, ScrollTrigger);
+      ScrollTrigger.config({ ignoreMobileResize: true });
 
       const createTween = () => {
         context?.revert();
@@ -113,10 +114,20 @@ export function BentoGallerySection() {
         }, wrap);
       };
 
+      let viewportWidth = window.innerWidth;
+      const handleResize = () => {
+        if (window.innerWidth === viewportWidth) {
+          return;
+        }
+
+        viewportWidth = window.innerWidth;
+        createTween();
+      };
+
       createTween();
-      window.addEventListener("resize", createTween);
+      window.addEventListener("resize", handleResize);
       removeResizeListener = () => {
-        window.removeEventListener("resize", createTween);
+        window.removeEventListener("resize", handleResize);
       };
     };
 

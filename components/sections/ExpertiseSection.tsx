@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { Container } from "@/components/ui/Container";
 
 const codeLines = [
@@ -35,7 +35,7 @@ export function ExpertiseSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const section = sectionRef.current;
     const stage = stageRef.current;
 
@@ -124,13 +124,16 @@ export function ExpertiseSection() {
             const timeline = gsap.timeline({
               defaults: { ease: "none" },
               scrollTrigger: {
-                anticipatePin: 1,
-                end: "+=360%",
-                invalidateOnRefresh: true,
-                pin: stage,
-                scrub: 1,
-                start: "top top",
                 trigger: section,
+                start: "top top",
+                end: "+=360%",
+
+                pin: section,
+                pinSpacing: true,
+
+                scrub: 1,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
               },
             });
 
@@ -332,7 +335,17 @@ export function ExpertiseSection() {
           },
         );
 
-        ScrollTrigger.refresh();
+        document.fonts.ready.then(() => {
+          if (!isMounted) return;
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              if (isMounted) {
+                ScrollTrigger.refresh();
+              }
+            });
+          });
+        });
       }, section);
     };
 

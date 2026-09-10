@@ -14,10 +14,10 @@ type HeroContentProps = Readonly<{
 }>;
 
 const headline = [
-  { id: "Onde", text: "Onde", variant: "script" },
-  { id: "design", text: "design," },
-  { id: "código", text: "código e" },
-  { id: "inovação", text: "inovação" },
+  { id: "onde", text: "Onde", variant: "script" },
+  { id: "codigo", text: "código," },
+  { id: "design", text: "design e" },
+  { id: "experiencia", text: "experiência" },
   { id: "se", text: "se", variant: "script" },
   { id: "encontram", text: "encontram." },
 ];
@@ -101,8 +101,9 @@ export function HeroContent({
           className="hero-proof max-w-lg text-base leading-7 text-white/78 sm:col-span-2 sm:order-2 sm:justify-self-end sm:pb-2 sm:text-lg"
           style={{ opacity: introOpacity }}
         >
-          Experiencias digitais sob medida para empresas que precisam comunicar
-          valor, sofisticacao e confianca desde o primeiro contato.
+          Interfaces e experiências digitais sob medida, desenvolvidas para
+          comunicar valor, transmitir confiança e transformar boas ideias em
+          produtos claros, modernos e performáticos.
         </motion.p>
 
         <div className="sm:col-span-2 sm:order-1">
